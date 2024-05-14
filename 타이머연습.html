@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -80,3 +81,87 @@
 </body>
 </html>
 
+=======
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>타이머 연습</title>
+    <style>
+        #box {
+           width: 500px;
+           height: 500px;
+           line-height: 20px;
+           border: 1px solid black;
+
+       }
+       .circle {
+           width: 350px;
+           height: 350px;
+           border-radius: 50%;
+           background-color: aqua;
+           text-align: center;
+
+       }
+
+   </style>
+</head>
+<body>
+    <div id="box">
+       <div class="circle">
+            <button id="btn" onclick="innhtml()">수업/휴식 시간</button>
+            <h3>현재 시각 :</h3>
+            <div id="current"></div>
+            <div id="lesson"></div>
+       </div>
+
+    </div>
+
+    <img id="img" src="bell1.png" alt="bell">
+    <script>
+        //setInterval (timeHandler, 1000);
+        //let btn1= document.getElementByTagName("button");
+        //function timeHandler() {
+        let date=new Date();
+        let hours=date.getHours();
+        let minutes=date.getMinutes();
+        let seconds=date.getSeconds();
+        let str="<h3>"+hours + "시 " + minutes + "분 " + seconds+ "초</h3>";
+         
+        function innhtml(){
+                document.getElementById("current").innerHTML=str+"<br>";
+                if (minutes>=50 && minutes<=59){
+                    nminutes=60-minutes;
+                    document.getElementById("lesson").innerHTML="<h3>수업시간까지</h3><br>"+"<h2>"+nminutes+"분</h2><br>"+" 남았습니다";}
+                else 
+                    nminutes=50-minutes;
+                    document.getElementById("lesson").innerHTML="<h3>휴식시간까지</h3><br>"+"<h2>"+nminutes+"분</h2><br>"+" 남았습니다";
+            }
+
+
+        let img=document.getElementById("img");
+            if (img.getAttribute("src")=="bell1.png") {
+                img.setAttribute("src", "bell2.png");
+            }
+            else 
+                img.setAttribute("src", "bell1.png");
+    
+
+                //document.write(date.minutes()+50+"------");
+ 
+    //let pressedDate=null; //가리키는 곳이 없음
+    // 버튼이 클릭이 되면 ... 
+    //let btn=document.getElementById("btn");
+    //btn.addEventListener("click", function() {
+        // 버튼이 눌린 시간을 기록하고
+       // let pressedDate=new Date();
+        //"쉬는 시간 48분 뒤, 47분 뒤,"을 버튼에 표시함
+    //});
+    // 50분 뒤에는 벨 이미지가 보여져야함.
+    // 버튼은 쉬는 시간 ->수업시간 이라고 표시되어야함
+    </script>
+
+</body>
+</html>
+
+>>>>>>> d4f331b1ce859f2cc2546c07f7117bf4c5b6bc23
